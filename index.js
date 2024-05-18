@@ -7,6 +7,7 @@ const cors = require('cors');
 app.use(cors());
 const bcrypt = require('bcrypt');
 const {connection , employeeModule , userModel} = require('./db')
+const port = process.env.PORT;
 
 app.post("/signup", async(req , res)=>{
     const { email , password , confirmPassword} = req.body;
@@ -109,7 +110,7 @@ app.delete('/employee/:id', async(req, res) => {
         console.log(error + 'this error from delete fun')
     }
 });
-const port = process.env.port;
+
 app.listen(port , ()=>{
     try {
         console.log(`Server is live on port ${port}`)

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const connection = mongoose.connect(process.env.url);
+const connection = mongoose.connect(process.env.URL);
 
 const empSchema = mongoose.Schema({
     firstName : {type : String},
